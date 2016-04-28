@@ -3,6 +3,7 @@ FROM busybox:ubuntu-14.04
 MAINTAINER comesx4 "comesx4@gmail.com"
 
 EXPOSE 80
+EXPOSE 4443
 # RUN apt-get update
 
 
