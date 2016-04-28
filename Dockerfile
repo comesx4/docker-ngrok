@@ -12,9 +12,8 @@ ADD ./ngrokd /ngrokd
 ADD ./ngrok.conf /etc/nginx/conf.d/
 
 RUN chmod +x /ngrokd
+RUN service nginx reload
 
-CMD service nginx start 
-CMD service nginx reload
 
 CMD ./ngrokd -domain="n.irazy.com" -httpAddr=":81"
 
