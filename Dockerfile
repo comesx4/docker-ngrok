@@ -8,11 +8,13 @@ EXPOSE 4443
 RUN apt-get update
 RUN apt-get install -y nginx
 
-
-
 ADD ./ngrokd /ngrokd
+ADD ./ngrok.conf /etc/nginx/conf.d/
 
 RUN chmod +x /ngrokd
+
+CMD service nginx start 
+CMD service nginx reload
 
 CMD ./ngrokd -domain="n.irazy.com" -httpAddr=":81"
 
